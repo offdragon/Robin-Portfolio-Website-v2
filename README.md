@@ -1,4 +1,4 @@
 # FinalProject
-Personal Website created in CS202
+Personal Website for Robin Balatbat
 
 View website using XAMPP control panel
