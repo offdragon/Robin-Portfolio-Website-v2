@@ -1,0 +1,571 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,400&display=swap');
+
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css");
+
+@import url("https://use.fontawesome.com/releases/v5.13.1/css/all.css");
+
+$bg-color: #000;
+$text-color: #fff;
+$accent-color: #080;
+$hover-color: rgb(255, 215, 0);
+
+#particles-js {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
+a {
+    transition: 0.3s all ease;
+    -webkit-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    text-decoration: none;
+}
+
+body {
+    background-color: $bg-color;
+    margin: 0;
+    padding: 0;
+    color: $text-color !important;
+    font: 18px/1.5 'Roboto', sans-serif !important;
+}
+
+.bannerimage {
+    background-color: $bg-color;
+    background-size: cover;
+    height: 100vh;
+    border-bottom: 2px solid $accent-color;
+}
+
+.banneritems {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    text-align: center !important;
+    color: $text-color;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    z-index: 2;
+
+    h1 {
+        font-size: 3em;
+    }
+
+    p {
+        font-size: 1.4em;
+        padding-bottom: 2rem;
+    }
+}
+
+header {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 5;
+    text-align: center;
+    padding: 2rem 4rem;
+}
+
+.header-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 2fr;
+}
+
+header nav {
+    background: transparent !important;
+}
+
+nav {
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        justify-content: space-between;
+        text-align: center;
+        transition: all .4s ease;
+    }
+    li {
+        list-style: none;
+        position: relative;
+
+        a {
+            display: block;
+            font-weight: 400;
+            opacity: 1;
+            color: $text-color;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: $hover-color !important;
+            transition: all .4s ease;
+        }
+
+        ul {
+            position: absolute;
+            width: 100%;
+            grid-template-columns: 1fr;
+            background: black;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .3s;
+
+            li {
+                a {
+                    display: block;
+                    font-weight: 400;
+                    color: $text-color !important;
+                    padding: 1rem 0;
+                    z-index: 1;
+                }
+
+                a:hover {
+                    color: $hover-color !important;
+                }
+            }
+        }
+    }
+}
+
+nav ul li:hover ul {
+    max-height: 500px;
+    transition: max-height .5s;
+}
+
+.main-padding {
+    padding: 3em 5em;
+}
+
+main {
+    background-color: $bg-color;
+}
+
+.main-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-gap: 4rem;
+}
+
+#toggle, #toggle2, #toggle3, .label, .drop-label {
+    display: none;
+}
+
+.carousel-container {
+    .owl-carousel .game-item {
+        text-align: center;
+        background-color: $accent-color;
+        img {
+            height: 350px;
+            object-fit: contain;
+        }
+    }
+    .owl-carousel .item {
+        .fa {
+            padding: 10px;
+        }
+        blockquote {
+            padding: 5px;
+        }
+        text-align: center;
+        background-color: $bg-color;
+        border: 1px solid $accent-color;
+        height: 10rem;
+    }
+
+    .button {
+        margin: 10px 5px;
+        padding: 10px 20px;
+    }
+    
+    .carousel-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.button {
+    border-radius: 2px;
+    text-decoration: none;
+    color: $text-color;
+    background-color: $accent-color;
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+}
+
+.button:hover {
+    cursor: pointer;
+    color: $hover-color;
+}
+
+.container-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-items: center;
+    grid-gap: 20px;
+    margin: 2em;
+
+    .item img {
+        border-radius: 2px;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .item img:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25), 0 5px 5px rgba(0, 0, 0, 0.22);
+        cursor: pointer;
+        filter: blur(2px) brightness(60%);
+    }
+}
+
+.supplies {
+    a {
+        text-decoration: none;
+        color: $text-color;
+    }
+
+    a:hover {
+        color: $hover-color;
+    }
+}
+
+.pagination {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border: 0px;
+
+    .page-link {
+        background-color: $accent-color;
+        color: $text-color;
+        border: 1px solid $accent-color !important;
+    }
+
+    .active a{
+        background-color: $bg-color !important;
+    }
+
+    .page-link:hover {
+        background-color: $accent-color !important;
+        color: $hover-color !important;
+        transition: all .4s ease;
+    }
+}
+
+.card {
+    background-color: $bg-color !important;
+    border: 2px solid $accent-color !important;
+}
+
+.comm-item {
+    text-align: center;
+
+    h3 {
+        padding: 5px;
+    }
+}
+
+.game-item {
+    text-align: center;
+
+    h3 {
+        padding: 5px;
+    }
+}
+
+.experience {
+    .card {
+        width: 350px;
+    }
+
+    ul {
+        text-decoration: none;
+    }
+}
+
+.game-art {
+    img {
+        width: 100%;
+        padding: 20px;
+        margin: 5px;
+        border: 2px solid $hover-color;
+    }
+}
+
+.slide {
+    img {
+        height: 350px;
+    }
+}
+
+
+footer {
+    padding-top: 5px;
+    background: $accent-color;
+    color: $text-color;
+}
+
+.copyright {
+    text-align: center;
+}
+
+.fas {
+    padding-right: 3px;
+}
+
+.sideleft {
+    .button {
+        padding: 10px;
+        margin: 5px;
+    }
+    img {
+        display: block;
+        margin: auto;
+    }
+}
+
+.sideright {
+    img {
+        display: block;
+        margin: auto;
+    }
+    .button {
+        padding: 10px;
+        margin: 5px;
+    }
+    .slider {
+        display: block;
+        margin: auto;
+    }
+}
+
+.contactform {
+    .button {
+        border: 0px;
+        margin: 5px 0px;
+    }
+
+    .button:hover {
+        transition: all .4s ease;
+    }
+}
+
+
+// media queries
+@media (max-width: 992px){
+    .label {
+        display: block;
+        cursor: pointer;
+        text-align: right;
+    }
+
+    .drop-label {
+        display: inline-block;
+        cursor: pointer;
+        text-align: right;
+    }
+
+    nav {
+        ul {
+            text-align: center;
+            grid-template-columns: 1fr;
+            position: absolute;
+            width: 100%;
+            top: 100%;
+            left: 0;
+            opacity: 0;
+            overflow: show;
+            transition: all .4s ease;
+
+            li {
+                ul {
+                    top: 100%;
+                    left: 0;
+                    opacity: 0;
+                    overflow: show;
+                    color: $text-color;
+                    background: $bg-color;
+                    transition: all .4s ease;
+
+                    li {
+                        a {
+                            padding: 5px 0;
+                        }
+                    }
+                }
+
+                a {
+                    padding: 5px 0;
+                }
+            }
+        }
+    }
+
+    #toggle:checked+ul {
+        z-index: 1;
+        opacity: 1;
+    }
+
+    #toggle2:checked+ul {
+        background: $bg-color;
+        opacity: 1;
+        z-index: 999;
+    }
+
+    #toggle3:checked+ul {
+        background: $bg-color;
+        opacity: 1;
+        z-index: 999;
+    }
+
+    header .logo {
+        float: left;
+        padding: 1em 0.5em 0.5em 0.5em;
+    }
+
+    .main-padding {
+        padding: 2em 0;
+    }
+
+    .menu a {
+        display: block;
+        margin: 0;
+    }
+
+    header .logo {
+        padding: 0;
+    }
+
+    .banneritems {
+        
+        height: 125vh;
+        h1 {
+            font-size: 40px;
+        }
+
+        p {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .sideright {
+        text-align: center;
+        width: 100%;
+        margin: 0.8em 0 0.8em 0;
+        padding-bottom: 5px;
+    }
+    
+    .sideleft {
+        padding-bottom: 1em;
+        text-align: center;
+        width: 100%;
+        margin: 0.8em 0 0.8em 0;
+
+        img {
+            width: 80%;
+        }
+    }
+    
+    .footer {
+        margin-bottom: 1em;
+        text-align: center;
+        width: 100%;
+        margin: 0.8em 0 0.8em 0;
+    }
+    
+    
+    .contactform {
+        text-align: center;
+        width: 100%;
+        margin: 0.8em 0 0.8em 0;
+    }
+    
+    .button {
+        text-align: center;
+        width: 100%;
+        margin: 0.8em 0 0.8em 0;
+    }
+    textarea {
+        text-align: center;
+        width: 100%;
+        margin: 0.8em 0 0.8em 0;
+    }
+
+    // Pagination
+    .pagination{
+        width: 50%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        padding-left: 0;
+        list-style: none;
+        border-radius: 0.25rem;
+        padding: 0;
+        overflow: visible;
+
+        .page-item {
+            background-color: inherit;
+            top: 0;
+        }
+    }
+
+    form {
+        .button {
+            border-radius: 1px;
+            text-decoration: none;
+            color: $text-color;
+            background-color: $accent-color;
+            text-align: center;
+            width: 100%;
+            padding: 5px;
+            margin: 5px auto;
+        }
+    
+        .button:hover {
+            cursor: pointer;
+            color: $hover-color;
+        }
+    }
+
+}
+
+@media (max-width:600px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        display: block;
+    }
+
+    .main-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    
+    .banneritems {
+        h1 {
+            font-size: 30px;
+        }
+
+        p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .page-link {
+        font-size: small;
+    }
+}
